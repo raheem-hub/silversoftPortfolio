@@ -16,18 +16,29 @@ document.addEventListener('DOMContentLoaded', () => {
   new PureCounter();
 
   const darkModeButton = document.getElementById('darkmode-button');
+  // Retrieve the dark mode preference from local storage
+  const isDarkMode = localStorage.getItem('darkMode') === 'true';
 
+  // Apply the preference
+  if (isDarkMode) {
+    document.body.classList.add("dark");
+    darkModeButton.innerHTML = '<i class="bi bi-sun-fill"></i>';
+  } else {
+    document.body.classList.remove("dark");
+    darkModeButton.innerHTML = '<i class="bi bi-moon-fill"></i>';
+  }
   darkModeButton.addEventListener('click', toggleMode);
 
   function toggleMode() {
-    let buttonText = darkModeButton.innerHTML;
-    var element = document.body;
-    if (buttonText === '<i class="bi bi-moon-fill"></i>') {
-      element.classList.add("dark");
-      darkModeButton.innerHTML = '<i class="bi bi-sun-fill"></i>';
-    } else {
-      element.classList.remove("dark");
+    const isDarkMode = document.body.classList.contains('dark');
+    if (isDarkMode) {
+      document.body.classList.remove("dark");
       darkModeButton.innerHTML = '<i class="bi bi-moon-fill"></i>';
+      localStorage.setItem('darkMode', 'false');
+    } else {
+      document.body.classList.add("dark");
+      darkModeButton.innerHTML = '<i class="bi bi-sun-fill"></i>';
+      localStorage.setItem('darkMode', 'true');
     }
   }
 
