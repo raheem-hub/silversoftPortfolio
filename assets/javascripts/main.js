@@ -18,27 +18,47 @@ document.addEventListener('DOMContentLoaded', () => {
   const darkModeButton = document.getElementById('darkmode-button');
   // Retrieve the dark mode preference from local storage
   const isDarkMode = localStorage.getItem('darkMode') === 'true';
-
+  const inputs = document.querySelectorAll('body input');
   // Apply the preference
   if (isDarkMode) {
     document.body.classList.add("dark");
     darkModeButton.innerHTML = '<i class="bi bi-sun-fill"></i>';
+    inputs.forEach(input => {
+      input.style.color = 'white';
+     
+  });
+
+    // Apply styles to each input element
+   
   } else {
     document.body.classList.remove("dark");
     darkModeButton.innerHTML = '<i class="bi bi-moon-fill"></i>';
+    inputs.forEach(input => {
+      input.style.color = 'black';
+     
+  });
   }
   darkModeButton.addEventListener('click', toggleMode);
 
   function toggleMode() {
+    const inputs = document.querySelectorAll('body input');
     const isDarkMode = document.body.classList.contains('dark');
     if (isDarkMode) {
       document.body.classList.remove("dark");
       darkModeButton.innerHTML = '<i class="bi bi-moon-fill"></i>';
       localStorage.setItem('darkMode', 'false');
+      inputs.forEach(input => {
+        input.style.color = 'black';
+       
+    });
     } else {
       document.body.classList.add("dark");
       darkModeButton.innerHTML = '<i class="bi bi-sun-fill"></i>';
       localStorage.setItem('darkMode', 'true');
+      inputs.forEach(input => {
+        input.style.color = 'white';
+       
+    });
     }
   }
 

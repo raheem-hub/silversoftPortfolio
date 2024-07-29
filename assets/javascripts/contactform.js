@@ -1,12 +1,7 @@
 $(function () {
     "use strict";
-    emailjs.init("C_AI9jjXDrYnzIXF5");
-    /*  
-        Template name    : Technoit - IT Solutions & Business Services Multipurpose Responsive Website Template
-        Author           : ZRTHEMES
-        Version          : 1.0
-        File Description : contact js file of the template
-    */
+    emailjs.init("37KeVYgUMKIvu6Rwp");
+     
     $('#ajax-contact').validator();
     $('#ajax-contact').on('submit', function(e) {
         e.preventDefault(); // Prevent the default form submission
@@ -30,7 +25,7 @@ $(function () {
         };
 
         // Send the email using EmailJS
-        emailjs.send('service_1v4pc7f', 'template_5j8ichq', templateParams)
+        emailjs.send('service_fapwozl', 'template_33xsjyv', templateParams)
             .then(function(response) {
                 console.log('SUCCESS!', response.status, response.text);
                 $("#msgSubmit").removeClass("hidden");
