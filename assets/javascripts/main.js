@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Retrieve the dark mode preference from local storage
   const isDarkMode = localStorage.getItem('darkMode') === 'true';
   const inputs = document.querySelectorAll('body input');
+  const textArea = document.querySelectorAll('body textarea');
   // Apply the preference
   if (isDarkMode) {
     document.body.classList.add("dark");
@@ -27,6 +28,10 @@ document.addEventListener('DOMContentLoaded', () => {
       input.style.color = 'white';
      
   });
+  textArea.forEach(input => {
+    input.style.color = 'white';
+   
+});
 
     // Apply styles to each input element
    
@@ -37,11 +42,16 @@ document.addEventListener('DOMContentLoaded', () => {
       input.style.color = 'black';
      
   });
+  textArea.forEach(input => {
+    input.style.color = 'black';
+   
+});
   }
   darkModeButton.addEventListener('click', toggleMode);
 
   function toggleMode() {
     const inputs = document.querySelectorAll('body input');
+    const textArea = document.querySelectorAll('body textarea');
     const isDarkMode = document.body.classList.contains('dark');
     if (isDarkMode) {
       document.body.classList.remove("dark");
@@ -51,6 +61,10 @@ document.addEventListener('DOMContentLoaded', () => {
         input.style.color = 'black';
        
     });
+    textArea.forEach(input => {
+      input.style.color = 'black';
+     
+  });
     } else {
       document.body.classList.add("dark");
       darkModeButton.innerHTML = '<i class="bi bi-sun-fill"></i>';
@@ -59,6 +73,11 @@ document.addEventListener('DOMContentLoaded', () => {
         input.style.color = 'white';
        
     });
+    textArea.forEach(input => {
+      input.style.color = 'white';
+     
+  });
+    
     }
   }
 
