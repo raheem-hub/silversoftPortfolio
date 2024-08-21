@@ -198,7 +198,9 @@ section {
 img {
   transition: 0.3s;
 }
-
+.about-us-img{
+  width:300px;
+}
 img:hover {
   transform: scale(1.1);
 }
@@ -631,7 +633,6 @@ section {background: var(--light-color);}
     transition: 0.3s;
     z-index: 9997;
   }
-
   .navbar ul {
     position: absolute;
     inset: 0;
@@ -1257,7 +1258,9 @@ section {background: var(--light-color);}
   .testimonials .testimonial-wrap {
     padding-left: 0;
   }
-
+  .about-us-img{
+    width:280px;
+  }
   .testimonials .testimonial-item {
     padding: 30px;
     margin: 15px;
@@ -1482,6 +1485,9 @@ section {background: var(--light-color);}
   .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
     max-width: 1140px;
   }
+  .about-us-img{
+    width:350px;
+  }
 }
 
 
@@ -1631,6 +1637,9 @@ section {background: var(--light-color);}
       border-radius: 0px;
       overflow: hidden;
   }
+  .about-us-img{
+    width:300px;
+  }
 }
 
 @media (max-width: 767px) {
@@ -1663,6 +1672,9 @@ section {background: var(--light-color);}
   .icon-boxes .card-two{
     margin-top: -20px;
     margin-bottom: -20px;
+  }
+  .about-us-img{
+    width:250px;
   }
 }
 
@@ -2387,6 +2399,9 @@ dl, ol, ul {
 @media (max-width: 575px) {
   .portfolio .portfolio-flters li {
     font-size: 14px;
+  }
+  .about-us-img{
+    width:190px;
   }
 }
 
