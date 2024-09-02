@@ -110,6 +110,25 @@
     <section id="recent-posts" class="recent-posts sections-bg">
       <div class="container" data-aos="fade-up">
         <div id="blogsList" class="row gy-4" >
+          <div class="col-lg-4">
+            <article>
+                <div class="post-img">
+                    <img src="https://www.silversoftsolutions.site/blog-uploads/VPN-thumbnail.webp" alt="The Best VPNs For Gaming, Mobile Users and For Privacy Image" class="img-fluid">
+                </div>
+                <p class="post-category">Privacy & Security</p>
+                <h2 class="title">
+                    <a href="https://www.silversoftsolutions.site/blogs/the-best-vpns-for-gaming--mobile-users-and-for-privacy.html">The Best VPNs For Gaming, Mobile Users and For Privacy</a>
+                </h2>
+                <div class="d-flex align-items-center">
+                    <div class="post-meta">
+                        <p class="post-author">Silversoft Solutions</p>
+                        <p class="post-date">
+                            <time datetime="2024-08-30">2024-08-30</time>
+                        </p>
+                    </div>
+                </div>
+            </article>
+        </div>
         </div><!-- End recent posts list -->
 
       </div>
@@ -224,59 +243,59 @@
   <!-- Template Main JS File -->
   <script src="assets/javascripts/main.js"></script>
 <script>
-async function fetchBlogs() {
-    try {
-        const response = await fetch('https://blog-post-meta-firebase.vercel.app/api/blogslist');
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const blogs = await response.json();
+//async function fetchBlogs() {
+//     try {
+//         const response = await fetch('https://blog-post-meta-firebase.vercel.app/api/blogslist');
+//         if (!response.ok) {
+//             throw new Error(`HTTP error! status: ${response.status}`);
+//         }
+//         const blogs = await response.json();
         
-        const blogsList = document.getElementById('blogsList');
-        blogsList.innerHTML = '';
+//         const blogsList = document.getElementById('blogsList');
+//         blogsList.innerHTML = '';
 
-        // Create the blog post HTML dynamically
-        const postsHtml = blogs.map(blog => {
-            const createdDate = new Date(blog.createddate);
-            const formattedDate = isNaN(createdDate.getTime()) ? 'Unknown Date' : createdDate.toLocaleDateString();
+//         // Create the blog post HTML dynamically
+//         const postsHtml = blogs.map(blog => {
+//             const createdDate = new Date(blog.createddate);
+//             const formattedDate = isNaN(createdDate.getTime()) ? 'Unknown Date' : createdDate.toLocaleDateString();
 
-            return `
-                <div class="col-lg-4">
-                    <article>
-                        <div class="post-img">
-                            <img src="${blog.thumbnail}" alt="${blog.title}" class="img-fluid">
-                        </div>
-                        <p class="post-category">${blog.shortdesc || 'Uncategorized'}</p>
-                        <h2 class="title">
-                            <a href="${blog.url}">${blog.title}</a>
-                        </h2>
-                        <div class="d-flex align-items-center">
-                            <div class="post-meta">
-                                <p class="post-author">${'Silversoft Solutions'}</p>
-                                <p class="post-date">
-                                    <time datetime="${createdDate.toISOString()}">${formattedDate}</time>
-                                </p>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-            `;
-        }).join('');
+//             return `
+//                 <div class="col-lg-4">
+//                     <article>
+//                         <div class="post-img">
+//                             <img src="${blog.thumbnail}" alt="${blog.title}" class="img-fluid">
+//                         </div>
+//                         <p class="post-category">${blog.shortdesc || 'Uncategorized'}</p>
+//                         <h2 class="title">
+//                             <a href="${blog.url}">${blog.title}</a>
+//                         </h2>
+//                         <div class="d-flex align-items-center">
+//                             <div class="post-meta">
+//                                 <p class="post-author">${'Silversoft Solutions'}</p>
+//                                 <p class="post-date">
+//                                     <time datetime="${createdDate.toISOString()}">${formattedDate}</time>
+//                                 </p>
+//                             </div>
+//                         </div>
+//                     </article>
+//                 </div>
+//             `;
+//         }).join('');
 
-        // Insert the generated HTML into the blogsList container
-        blogsList.innerHTML = postsHtml;
+//         // Insert the generated HTML into the blogsList container
+//         blogsList.innerHTML = postsHtml;
         
-    } catch (error) {
-        console.error('Error:', error);
-    }
-}
+//     } catch (error) {
+//         console.error('Error:', error);
+//     }
+// }
 
 // Load blogs on page load
-window.onload = fetchBlogs;
+// window.onload = fetchBlogs;
 
 </script>
 
 
 </body>
-<!-- Mirrored from zrtechsolutions.com/demo/html/Silversoft  Solutions/blogs.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 25 Jul 2024 15:14:17 GMT -->
+
 </html>
