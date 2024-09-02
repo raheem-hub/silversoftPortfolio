@@ -204,7 +204,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
 
   /**
-   * Porfolio isotope and filter
+   * portfolio isotope and filter
    */
   let portfolionIsotope = document.querySelector('.portfolio-isotope');
 
